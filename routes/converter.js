@@ -9,8 +9,7 @@ router.post('/convert', async (req, res) => {
   const { amount, fromCurrency, toCurrency } = req.body;
 
   try {
-    const url = `https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${fromCurrency}/${toCurrency}/${amount}`;
-    const response = await fetch(url);
+    const url =  `https://api.exchangerate.host/convert?from=USD&to=INR&amount=1`
     const data = await response.json();
 
     if (data.conversion_result) {
